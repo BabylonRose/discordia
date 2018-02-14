@@ -1,6 +1,68 @@
 # ChessBot -- Dakota Gray 02/2018 -- Chess Game Script for
 # use with personal Discord server.
+# import discord
+# from discord.ext import commands
+
+# start call to menu
+menu = ChessMenu('TODO')
+menu.start
+
+# Menu object class
+class ChessMenu:
+    args = ''
+
+    def __init__(self, args_str):
+        self.args = args_str
+
+    def start(self):
+        print(' |\CHESS-BOT/|\n'
+              '1. One Player \n'
+              '2. Two Player \n'
+              '3. Load Game  \n'
+              '4. Options    \n'
+              '5. Statistics \n'
+              '6. Quit       \n'
+              ' |/---------\|\n')
+
+# Game object class
+class ChessGame:
+    def startGame(self):
+        print('start game')
+
+# Chess board object class
+class ChessBoard:
+    def startBoard(self):
+        print('chess board')
+
+# Chess piece object class
+class ChessPiece:
+
+    color = ''
+    type = ''
+    state = 1
+    location = ''
+    hasMoved = 0
+    hasBeenChecked = 0
+
+    def __init__(self,p_color,p_type,p_loc):
+        self.color = p_color
+        self.type = p_type
+        self.state = 1
+        self.location = p_loc
 
 
+    def startPiece(self):
+        print('chess piece')
 
+# Options object class
+class ChessOptions:
+    def startOptions(self):
+        print('options')
+
+# Stats object class
+class ChessStats:
+    def startStats(self):
+        print('stats')
+
+# bot.run('token')
 # EOF
