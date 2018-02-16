@@ -2,41 +2,71 @@
 # use with personal Discord server.
 # import discord
 # from discord.ext import commands
+import sys
+import time
 
-# start call to menu
-menu = ChessMenu('TODO')
-menu.start
 
 # Menu object class
 class ChessMenu:
-    args = ''
-
+    """TODO - add description """
     def __init__(self, args_str):
         self.args = args_str
 
-    def start(self):
-        print(' |\CHESS-BOT/|\n'
-              '1. One Player \n'
-              '2. Two Player \n'
-              '3. Load Game  \n'
-              '4. Options    \n'
-              '5. Statistics \n'
-              '6. Quit       \n'
-              ' |/---------\|\n')
+    def clear_prompt(self):
+        for i in range(11):
+            sys.stdout.write("\033c")
+            sys.stdout.write("\033[F")  # cursor up one line || "\033[K" for clear to end of line
+            sys.stdout.flush()
+
+    def menu(self):
+        while 1:
+            time.sleep(1)
+            self.clear_prompt()
+            print(' |\CHESS-BOT/|\n'
+                  ' 1. One Player \n'
+                  ' 2. Two Player \n'
+                  ' 3. Load Game  \n'
+                  ' 4. Options    \n'
+                  ' 5. Statistics \n'
+                  ' 6. Quit       \n'
+                  ' |/---------\|\n')
+            choice = int(input('?: '))
+            if choice == 1:
+                print('Starting 1 player game against a.i. :')
+            elif choice == 2:
+                print('Starting 2 player game :')
+            elif choice == 3:
+                print('Choose game to load :')
+            elif choice == 4:
+                print('Game options :')
+            elif choice == 5:
+                print('Local leaderboards :')
+            elif choice == 6:
+                print('Quitting Chess Bot . . .')
+                self.clear_prompt()
+                return
+            else:
+                print('Invalid input')
+        # #bottom of while loop
+
 
 # Game object class
 class ChessGame:
-    def startGame(self):
+    """TODO - add description """
+    def start_game(self):
         print('start game')
+
 
 # Chess board object class
 class ChessBoard:
-    def startBoard(self):
+    """TODO - add description """
+    def start_board(self):
         print('chess board')
+
 
 # Chess piece object class
 class ChessPiece:
-
+    """TODO - add description """
     color = ''
     type = ''
     state = 1
@@ -50,19 +80,28 @@ class ChessPiece:
         self.state = 1
         self.location = p_loc
 
-
-    def startPiece(self):
+    def start_piece(self):
         print('chess piece')
+
 
 # Options object class
 class ChessOptions:
-    def startOptions(self):
+    """TODO - add description """
+    def start_options(self):
         print('options')
+
 
 # Stats object class
 class ChessStats:
-    def startStats(self):
+    """TODO - add description """
+    def start_stats(self):
         print('stats')
+
+
+# Main script execution:
+# start call to menu
+chessMenu = ChessMenu('TODO')
+chessMenu.menu()
 
 # bot.run('token')
 # EOF
